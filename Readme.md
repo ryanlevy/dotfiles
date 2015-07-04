@@ -59,3 +59,8 @@ Helpful things to have installed beforehand:
 * brew
 * stow ([clone from source ](https://savannah.gnu.org/git/?group=stow), or `brew install stow`)
 * tree (`brew install tree` if on mac)
+
+## Sources/Credit:
+* [solarized](https://github.com/altercation/vim-colors-solarized)
+* [monokai](https://github.com/sickill/vim-monokai)
+
