@@ -47,6 +47,7 @@ The directory setup is something like:
 ```
 Simply put the folder name as the application and any dotfiles inside, then stow will symlink them:
 ```
+$ ls -al ~ | grep rc
 lrwxr-xr-x    1 ryanlevy  staff     .bashrc -> dotfiles/bash/.bashrc
 lrwxr-xr-x    1 ryanlevy  staff     .vimrc -> dotfiles/vim/.vimrc
 ```
