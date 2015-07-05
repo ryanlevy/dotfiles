@@ -19,6 +19,14 @@ alias wget='wget -c'
 alias cd..='cd ..'
 #use awk that outputs higher accuracy of digits
 alias awkhq='awk -v OFMT=%.15g'
+# Increase Bash history size. Allow 32^3*10 entries,~10 mb; the default is 500.
+# optional ideas/further comments: http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE='327680';
+
+# this omtis both duplicates from history, but omits commands that begin with space
+# thus you can hide things from history with " command" easily
+export HISTCONTROL='ignoreboth';
+
 #------------------------
 #	Mac alias
 #------------------------
