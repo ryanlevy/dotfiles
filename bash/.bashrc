@@ -102,3 +102,16 @@ function mkcd() {
     mkdir -p $1 && cd $1
   fi
 }
+# removes all but matching params
+# because it is dangerous, confirm dir 
+#TODO:fix files with spaces in name
+function rmbut(){
+read -p "Delete all but $1 in ${PWD}? " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    echo "stop!"
+else
+    ls | grep -v $1 | xargs rm -r
+fi
+}
