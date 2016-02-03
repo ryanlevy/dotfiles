@@ -115,3 +115,10 @@ else
     ls | grep -v $1 | xargs rm -r
 fi
 }
+
+#setup lmod
+source /usr/local/Cellar/lmod/5.9.3/init/bash
+module use ${HOME}/modulefiles
+export LMOD_COLORIZE="YES"
+#load default modules
+source ~/.modules
