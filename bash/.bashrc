@@ -27,6 +27,21 @@ export HISTFILESIZE='327680';
 # thus you can hide things from history with " command" easily
 export HISTCONTROL='ignoreboth';
 
+#check if a command exists, useful for crossplatform
+exists () {
+    type "$1" &> /dev/null ;
+}
+
+#------------------------
+#	git alias
+#------------------------
+if exists git; then
+  #gs is ghostscript unfortunately
+  alias gst='git status '
+  alias ga='git add '
+  alias gc='git commit'
+fi
+
 #------------------------
 #	Mac alias
 #------------------------
@@ -117,8 +132,16 @@ fi
 }
 
 #setup lmod
-source /usr/local/Cellar/lmod/5.9.3/init/bash
-module use ${HOME}/modulefiles
-export LMOD_COLORIZE="YES"
-#load default modules
-source ~/.modules
+if [ $(uname) = "Darwin" ] 
+then
+  source /usr/local/Cellar/lmod/5.9.3/init/bash
+  module use ${HOME}/modulefiles
+  export LMOD_COLORIZE="YES"
+  #load default modules
+  source ~/.modules
+fi
+
+if exists pass; then
+  #load pass autocomplete
+  source /usr/local/etc/bash_completion.d/password-store
+fi
