@@ -27,6 +27,9 @@ export HISTFILESIZE='327680';
 # thus you can hide things from history with " command" easily
 export HISTCONTROL='ignoreboth';
 
+#save all bash commands to log files
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(hostname) $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
+
 #check if a command exists, useful for crossplatform
 exists () {
     type "$1" &> /dev/null ;
@@ -145,3 +148,8 @@ if exists pass; then
   #load pass autocomplete
   source /usr/local/etc/bash_completion.d/password-store
 fi
+
+#load homebrew autocompletion
+for f in /usr/local/etc/bash_completion.d/*; do
+    source $f
+done
