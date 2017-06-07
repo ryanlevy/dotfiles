@@ -28,8 +28,10 @@
 ## List of files to run at IPython startup.
 #c.InteractiveShellApp.exec_files = []
 
+## mathtext to computer modern
+## https://husky.wordpress.com/2017/02/02/revert-matplotlib-2-0-mathtext-default-font-style-to-computer-modern/
 ## lines of code to run at IPython startup.
-c.InteractiveShellApp.exec_lines = ["import numpy as np","import matplotlib.pyplot as plt"]
+c.InteractiveShellApp.exec_lines = ["import numpy as np","import matplotlib.pyplot as plt","plt.rcParams['mathtext.fontset'] = 'cm'","plt.rcParams['mathtext.rm'] = 'serif'"]
 
 ## A list of dotted module names of IPython extensions to load.
 #c.InteractiveShellApp.extensions = []
