@@ -11,7 +11,7 @@ alias llsd="lld"
 if [ $(uname) = "Linux" ]
 then
   export PS1='\[\e[0;36m\]\h:\w $\[\e[m\] ' #to know not on mac
-  alias ls='ls'
+  alias ls='ls --color=auto'
   alias ll='ls -la --color=auto' #long list
   alias lsd="ls -d */ --color=auto" #show directories only
   alias lld="ls -ld */ --color=auto" #show directories long format
