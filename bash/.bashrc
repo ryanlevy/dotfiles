@@ -8,6 +8,14 @@ alias ll='ls -la -G' #long list
 alias lsd="ls -d */" #show directories only
 alias lld="ls -ld */" #show directories long format
 alias llsd="lld"
+if [ $(uname) = "Linux" ]
+then
+  export PS1='\[\e[0;36m\]\h:\w $\[\e[m\] ' #to know not on mac
+  alias ls='ls'
+  alias ll='ls -la --color=auto' #long list
+  alias lsd="ls -d */ --color=auto" #show directories only
+  alias lld="ls -ld */ --color=auto" #show directories long format
+fi
 
 # colorize grep
 alias grep='grep --color=auto'
@@ -134,9 +142,13 @@ else
 fi
 }
 
-#setup lmod
+#setup lmod and homebrew
 if [ $(uname) = "Darwin" ] 
 then
+  #load homebrew autocompletion
+  for f in /usr/local/etc/bash_completion.d/*; do
+      source $f
+  done
   source /usr/local/Cellar/lmod/7.5.2_1/lmod/init/bash
   module use ${HOME}/modulefiles
   export LMOD_COLORIZE="YES"
@@ -149,7 +161,3 @@ if exists pass; then
   source /usr/local/etc/bash_completion.d/pass
 fi
 
-#load homebrew autocompletion
-for f in /usr/local/etc/bash_completion.d/*; do
-    source $f
-done
