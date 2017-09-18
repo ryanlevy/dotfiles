@@ -1,4 +1,21 @@
 syntax on
+"set nocompatible              " be iMproved, required
+filetype off                  " required
+
+"vundle stuff
+"set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" Plugin 'Valloric/YouCompleteMe'
+" let Vundle manage Vundle, required
+"Plugin 'VundleVim/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+" call vundle#end()            " required
+
 filetype indent plugin on
 set softtabstop=2   " number of spaces in tab when editing
 set tabstop=2   " number of spaces in tab when editing
@@ -9,13 +26,15 @@ set exrc " if a .vimrc is found in pwd, use that
 set secure " make said sourcing more secure
 set background=dark
 set wildmenu "visual autocomplete for command menu
-if has("gui_macvim")
+if has('gui_macvim')
     " MacVim settings	
     let g:solarized_termtrans=1
     colorscheme solarized
     set transparency=5
     " Disable all blinking:
     :set guicursor+=a:blinkon0
+    set macligatures
+    set guifont=Fira\ Code:h12
 else
     colorscheme desert
     "colorscheme monokai
@@ -24,9 +43,9 @@ endif
 map <f5> :w\|!python3 %<cr> 
 " build info:
 " most of the time work is done with cmake in ./build
-if filereadable(expand("%:p:h")."/Makefile")
+if filereadable(expand('%:p:h').'/Makefile')
 	    setlocal makeprg=make\ \ -j8
-elseif !filereadable(expand("%:p:h")."/build/Makefile")
+elseif !filereadable(expand('%:p:h').'/build/Makefile')
 	    setlocal makeprg=gcc\ -Wall\ -Wextra\ -o\ %<\ %
 else 
 	    setlocal makeprg=make\ -C\ build\ -j8

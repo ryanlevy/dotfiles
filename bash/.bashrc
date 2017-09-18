@@ -137,7 +137,7 @@ fi
 #setup lmod
 if [ $(uname) = "Darwin" ] 
 then
-  source /usr/local/Cellar/lmod/5.9.3/init/bash
+  source /usr/local/Cellar/lmod/7.5.2_1/lmod/init/bash
   module use ${HOME}/modulefiles
   export LMOD_COLORIZE="YES"
   #load default modules
