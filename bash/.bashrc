@@ -161,3 +161,4 @@ if exists pass; then
   source /usr/local/etc/bash_completion.d/pass
 fi
 
+source tmux_attach.sh
