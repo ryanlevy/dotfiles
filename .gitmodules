@@ -1,0 +1,3 @@
+[submodule "themes/intellij-platform-solarized"]
+	path = themes/intellij-platform-solarized
+	url = https://github.com/4lex4/intellij-platform-solarized

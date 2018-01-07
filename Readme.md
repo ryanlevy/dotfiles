@@ -1,6 +1,5 @@
 # dotfiles
 Here are some of the dotfiles for most of my systems. 
-> _"You make the dotfiles, and the dotfiles make you"_.
 
 I use [gnu stow](http://www.gnu.org/software/stow/) to manage them. Stow provides a clean and portable way to symlink all of the dotfiles to the appropriate directory
 
@@ -61,6 +60,6 @@ Helpful things to have installed beforehand:
 * tree (`brew install tree` if on mac)
 
 ## Sources/Credit:
-* [solarized](https://github.com/altercation/vim-colors-solarized)
+* [vim solarized](https://github.com/altercation/vim-colors-solarized) / [solarized](http://ethanschoonover.com/solarized)
 * [monokai](https://github.com/sickill/vim-monokai)
 
