@@ -43,6 +43,11 @@ exists () {
     type "$1" &> /dev/null ;
 }
 
+#ssh stuff goes in here
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
+
 #------------------------
 #	git alias
 #------------------------

@@ -53,6 +53,9 @@ lrwxr-xr-x    1 ryanlevy  staff     .vimrc -> dotfiles/vim/.vimrc
 
 [More of a tutorial](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) or [here](http://taihen.org/managing-dotfiles-with-gnu-stow/).
 
+## Python setup
+I keep some of my prefered settings for [Jupyter](http://jupyter.org/) (and the IPython kernel) in here. The install script I run can be found [here](https://ryanlevy.github.io/programming/Reinstalling-Python/). 
+
 ## Other packages
 Helpful things to have installed beforehand:
 * brew
