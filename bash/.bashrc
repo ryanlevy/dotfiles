@@ -17,6 +17,10 @@ then
   alias lld="ls -ld */ --color=auto" #show directories long format
 fi
 
+#file size testing
+alias filesize='du -sh'
+alias dirsize='du -sh ./*/'
+
 # colorize grep
 alias grep='grep --color=auto'
 

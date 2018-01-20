@@ -51,7 +51,7 @@ c.InteractiveShellApp.exec_lines = ["import numpy as np","import matplotlib.pypl
 #c.InteractiveShellApp.hide_initial_ns = True
 
 ## Configure matplotlib for interactive use with the default matplotlib backend.
-c.InteractiveShellApp.matplotlib = 'inline'
+#c.InteractiveShellApp.matplotlib = 'inline'
 
 ## Force matplotlib to use retina 2x images
 ## https://gist.github.com/minrk/3301035
