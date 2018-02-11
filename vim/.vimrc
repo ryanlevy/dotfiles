@@ -26,6 +26,7 @@ set exrc " if a .vimrc is found in pwd, use that
 set secure " make said sourcing more secure
 set background=dark
 set wildmenu "visual autocomplete for command menu
+set mouse=a "allow mouse in tmux
 if has('gui_macvim')
     " MacVim settings	
     let g:solarized_termtrans=1
