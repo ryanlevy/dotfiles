@@ -42,6 +42,10 @@ export HISTCONTROL='ignoreboth';
 #save all bash commands to log files
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(hostname) $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
 
+#credit: MikkoFinell from HN
+alias mostused='history | awk '\''{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}'\'' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10'
+
+
 #check if a command exists, useful for crossplatform
 exists () {
     type "$1" &> /dev/null ;

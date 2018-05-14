@@ -7,7 +7,7 @@
 
 #Add extra packages to not clean using package1|package2
 #note to not add any extra spaces, or trail with |
-DONT_CLEAN="eigen|lmod"
+DONT_CLEAN="eigen|lmod|hdf5"
 #DONT_CLEAN=""
 
 #combine pinned and listed
