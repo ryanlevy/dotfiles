@@ -62,6 +62,7 @@ fi
 if exists git; then
   #gs is ghostscript unfortunately
   alias gst='git status '
+  alias gstu='git status -uno' #don't look at untracked files
   alias ga='git add '
   alias gc='git commit'
 fi
