@@ -1,4 +1,4 @@
-Based on the iTerm2 colorscheme:
+Based on the iTerm2 [solarized](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized) colorscheme:
 
 |  Name	 | Normal(RGB)  | 	Normal Hex | Bright (RGB) | Bright Hex |
 |--------|--------------|--------------|--------------|------------|
