@@ -10,7 +10,7 @@ alias lld="ls -ld */" #show directories long format
 alias llsd="lld"
 if [ $(uname) = "Linux" ]
 then
-  export PS1='\[\e[0;36m\]\h:\w $\[\e[m\] ' #to know not on mac
+  export PS1='\[\e[1;36m\]\h:\w $\[\e[m\] ' #to know not on mac
   alias ls='ls --color=auto'
   alias ll='ls -la --color=auto' #long list
   alias lsd="ls -d */ --color=auto" #show directories only
@@ -20,6 +20,10 @@ fi
 #file size testing
 alias filesize='du -sh'
 alias dirsize='du -sh ./*/'
+
+#vim commands
+alias todo="vim -o ~/{todo.txt,progress.txt,done.txt}"
+alias did="vim +'normal Go' +'r!date' ~/did.txt"
 
 # colorize grep
 alias grep='grep --color=auto'
