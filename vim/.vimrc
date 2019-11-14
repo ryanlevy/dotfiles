@@ -27,6 +27,8 @@ set secure " make said sourcing more secure
 set background=dark
 set wildmenu "visual autocomplete for command menu
 set mouse=a "allow mouse in tmux
+set splitright "open new vertical splits on the right not left
+set splitbelow "open new horizontal splits on bot not top
 if has('gui_macvim')
     " MacVim settings	
     let g:solarized_termtrans=1

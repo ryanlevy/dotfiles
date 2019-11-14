@@ -15,6 +15,7 @@ then
   alias ll='ls -la --color=auto' #long list
   alias lsd="ls -d */ --color=auto" #show directories only
   alias lld="ls -ld */ --color=auto" #show directories long format
+  export PROMPT_DIRTRIM=3 #only show last three folders
 fi
 
 #file size testing
@@ -190,6 +191,16 @@ function tma() {
     tmux switch-client -t $1
  fi
 }
+# changes default window directory to current location
+function tmac() {
+  if [ -z "$TMUX" ]; then
+    # not in tmux
+    tmux attach-session -t $1 -c ${PWD}
+  else
+    # inside tmux
+    tmux switch-client -t $1
+ fi
+}
 # tmux session tab complete function
 function _tmux_complete_session() {
   local IFS=$'\n'
@@ -197,3 +208,4 @@ function _tmux_complete_session() {
   COMPREPLY=( ${COMPREPLY[@]:-} $(compgen -W "$(tmux -q list-sessions | cut -f 1 -d ':')" -- "${cur}") )
 }
 complete -F _tmux_complete_session tma
+complete -F _tmux_complete_session tmac
