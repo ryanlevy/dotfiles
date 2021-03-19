@@ -142,7 +142,7 @@ function mkcd() {
   if [ ! -n "$1" ]; then
     echo "Forgot a directory name"
   elif [ -d $1 ]; then
-    echo "\`$1' already exists"
+    echo " \`$1' already exists"
   else
     mkdir -p $1 && cd $1
   fi
@@ -161,6 +161,13 @@ else
 fi
 }
 
+function memorable_password() {
+  words="${1:-5}"
+  sep="${2:--}"
+
+  LC_ALL=C grep -x '[a-z]*' /usr/share/dict/words | shuf --random-source=/dev/urandom -n ${words} | paste -sd "$sep"
+}
+
 #setup lmod and homebrew
 if [ $(uname) = "Darwin" ] 
 then
@@ -173,12 +180,12 @@ then
   export LMOD_COLORIZE="YES"
   #load default modules
   source ~/.modules
+  if exists pass; then
+    #load pass autocomplete
+    source /usr/local/etc/bash_completion.d/pass
+  fi
 fi
 
-if exists pass; then
-  #load pass autocomplete
-  source /usr/local/etc/bash_completion.d/pass
-fi
 
 # stolen from bruno-
 # bash function that switches sessions
