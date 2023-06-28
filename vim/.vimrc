@@ -16,7 +16,7 @@ filetype off                  " required
 " All of your Plugins must be added before the following line
 " call vundle#end()            " required
 
-# enforce 2 space tabs in py/jl
+" enforce 2 space tabs in py/jl
 let g:python_recommended_style = 0
 let g:julia_set_indentation = 0
 
